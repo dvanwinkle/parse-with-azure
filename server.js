@@ -8,11 +8,11 @@ var AzureStorageAdapter = require('parse-server-azure-storage').AzureStorageAdap
  * Database
  */
 var databaseUser = process.env.DATABASE_USER;
-var databasePassword = process.env.DATABASE_PASSWORD ? ':${process.env.DATABASE_PASSWORD}' : undefined;
-var databaseAuth = databaseUser ? '${databaseUser}${databasePassword}@' : ''
+var databasePassword = process.env.DATABASE_PASSWORD ? `:${process.env.DATABASE_PASSWORD}` : undefined;
+var databaseAuth = databaseUser ? `${databaseUser}${databasePassword}@` : ''
 var databaseServer = process.env.DATABASE_SERVER;
 var databaseCollection = process.env.DATABASE_COLLECTION;
-var databaseUri = "mongodb://${databaseAuth}${databaseServer}/${databaseCollection}";
+var databaseUri = `mongodb://${databaseAuth}${databaseServer}/${databaseCollection}`;
 
 /**
  * Storage
@@ -46,7 +46,7 @@ var parseOptions = {
     maxUploadSize: process.env.PARSE_SERVER_MAX_UPLOAD_SIZE
 };
 if (process.env.CLOUD_CODE_MAIN) {
-    parseOptions.cloud = '${__dirname}/${process.env.CLOUD_CODE_MAIN}';
+    parseOptions.cloud = `${__dirname}/${process.env.CLOUD_CODE_MAIN}`;
 }
 
 var api = new ParseServer(parseOptions);
@@ -74,5 +74,5 @@ if (loaderIo) {
 
 var port = process.env.PORT || 1337;
 app.listen(port, () => {
-    console.log('parse-server running on port ${port}.');
+    console.log(`parse-server running on port ${port}.`);
 });
