@@ -1,0 +1,31 @@
+{
+  "name": "parse-with-azure",
+  "version": "1.0.0",
+  "description": "Parse Server with Azure File Storage",
+  "homepage": "https://github.com/dvanwinkle/parse-with-azure",
+  "author": {
+      "name": "Dan VanWinkle",
+      "email": "dan.vanwinkle@krush.com",
+      "url": "https://github.com/dvanwinkle"
+  },
+  "main": "server.js",
+  "repository": {
+      "type": "git",
+      "url": "git://github.com/dvanwinkle/parse-with-azure.git"
+  },
+  "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/dvanwinkle/parse-with-azure/issues"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.2.x",
+    "parse-server": "^2.1.4",
+    "parse-server-azure-storage": "^0.2.3"
+  },
+  "engines": {
+      "node": ">=4.3"
+  }
+}
