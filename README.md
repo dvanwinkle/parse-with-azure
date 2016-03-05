@@ -34,4 +34,4 @@ A base to getting started with Parse Server with Azure Storage. If you are not u
 `PARSE_SERVER_ENABLE_ANON_USERS`: Enable (or disable) anon users. _default: `true`_  
 `PARSE_SERVER_ALLOW_CLIENT_CLASS_CREATION`: Enable (or disable) client class creation. _default: `true`_  
 `PARSE_SERVER_MAX_UPLOAD_SIZE`: Max file size for uploads. _defautl: `20mb`_  
-`STORAGE_DIRECT_ACCESS`: See [parse-server-azure-storage](https://github.com/felixrieseberg/parse-server-azure-storage/blob/master/README.md#direct-access "Direct Access"). _default: `false`_
+`STORAGE_DIRECT_ACCESS`: See [parse-server-azure-storage](https://github.com/felixrieseberg/parse-server-azure-storage/blob/master/README.md#direct-access "Direct Access"). _default: `true`_

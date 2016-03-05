@@ -21,7 +21,7 @@ var storageAccount = process.env.STORAGE_ACCOUNT;
 var storageContainer = process.env.STORAGE_CONTAINER;
 var storageOptions = {
     accessKey: process.env.STORAGE_ACCESS_KEY,
-    directAccess: (process.env.STORAGE_DIRECT_ACCESS !== undefined) ? process.env.STORAGE_DIRECT_ACCESS : false
+    directAccess: (process.env.STORAGE_DIRECT_ACCESS !== undefined) ? process.env.STORAGE_DIRECT_ACCESS : true
 }
 
 /**
