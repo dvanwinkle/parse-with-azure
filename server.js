@@ -29,7 +29,21 @@ var storageOptions = {
  */
 var parseOptions = {
     databaseURI: databaseUri,
-    filesAdapter: new AzureStorageAdapter(storageAccount, storageContainer, storageOptions)
+    filesAdapter: new AzureStorageAdapter(storageAccount, storageContainer, storageOptions),
+    appId: process.env.PARSE_SERVER_APPLICATION_ID,
+    masterKey: process.env.PARSE_SERVER_MASTER_KEY,
+    fileKey: process.env.PARSE_SERVER_FILE_KEY,
+    facebookAppIds: process.env.PARSE_SERVER_FACEBBOK_APP_IDS,
+    serverURL: process.env.PARSE_SERVER_URL,
+    push: process.env.PARSE_SERVER_PUSH,
+    clientKey: process.env.PARSE_SERVER_CLIENT_KEY,
+    javascriptKey: process.env.PARSE_SERVER_JAVASCRIPT_KEY,
+    restAPIKey: process.env.PARSE_SERVER_REST_API_KEY,
+    dotNetKey: process.env.PARSE_SERVER_DOT_NET_KEY,
+    enableAnonymousUsers: process.env.PARSE_SERVER_ENABLE_ANON_USERS || true,
+    allowClientClassCreation: process.env.PARSE_SERVER_ALLOW_CLIENT_CLASS_CREATION || true,
+    oauth: process.env.PARSE_SERVER_OATUH_PROVIDERS,
+    maxUploadSize: process.env.PARSE_SERVER_MAX_UPLOAD_SIZE
 };
 if (process.env.CLOUD_CODE_MAIN) {
     parseOptions.cloud = '${__dirname}/${process.env.CLOUD_CODE_MAIN}';
