@@ -34,7 +34,7 @@ var parseOptions = {
     masterKey: process.env.PARSE_SERVER_MASTER_KEY,
     fileKey: process.env.PARSE_SERVER_FILE_KEY,
     facebookAppIds: process.env.PARSE_SERVER_FACEBBOK_APP_IDS,
-    serverURL: process.env.PARSE_SERVER_URL,
+    serverURL: process.env.PARSE_SERVER_URL || 'http://localhost:1337/1',
     push: process.env.PARSE_SERVER_PUSH,
     clientKey: process.env.PARSE_SERVER_CLIENT_KEY,
     javascriptKey: process.env.PARSE_SERVER_JAVASCRIPT_KEY,
