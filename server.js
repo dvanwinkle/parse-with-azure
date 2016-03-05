@@ -61,14 +61,14 @@ app.use(mountPath, api);
 
 if (process.env.ENABLE_ROOT_ROUTE) {
     app.get('/', (_, res) => {
-        res.success('Success');
+        res.status(200).send('Success');
     });
 }
 
 var loaderIo = process.env.LOADER_IO;
 if (loaderIo) {
     app.get('/${loaderIo}', (_, res) => {
-        res.sucess(loaderIo);
+        res.status(200).send(loaderIo);
     });
 }
 
