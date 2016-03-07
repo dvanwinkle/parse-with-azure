@@ -8,7 +8,7 @@ var AzureStorageAdapter = require('parse-server-azure-storage').AzureStorageAdap
  * Database
  */
 var databaseUser = process.env.DATABASE_USER;
-var databasePassword = process.env.DATABASE_PASSWORD ? `:${process.env.DATABASE_PASSWORD}` : undefined;
+var databasePassword = process.env.DATABASE_PASSWORD ? `:${encodeURIComponent(process.env.DATABASE_PASSWORD)}` : undefined;
 var databaseAuth = databaseUser ? `${databaseUser}${databasePassword}@` : ''
 var databaseServer = process.env.DATABASE_SERVER;
 var databaseCollection = process.env.DATABASE_COLLECTION;
@@ -29,7 +29,6 @@ var storageOptions = {
  */
 var parseOptions = {
     databaseURI: databaseUri,
-    filesAdapter: new AzureStorageAdapter(storageAccount, storageContainer, storageOptions),
     appId: process.env.PARSE_SERVER_APPLICATION_ID,
     masterKey: process.env.PARSE_SERVER_MASTER_KEY,
     fileKey: process.env.PARSE_SERVER_FILE_KEY,
@@ -43,7 +42,8 @@ var parseOptions = {
     enableAnonymousUsers: process.env.PARSE_SERVER_ENABLE_ANON_USERS || true,
     allowClientClassCreation: process.env.PARSE_SERVER_ALLOW_CLIENT_CLASS_CREATION || true,
     oauth: process.env.PARSE_SERVER_OATUH_PROVIDERS,
-    maxUploadSize: process.env.PARSE_SERVER_MAX_UPLOAD_SIZE
+    maxUploadSize: process.env.PARSE_SERVER_MAX_UPLOAD_SIZE,
+    filesAdapter: new AzureStorageAdapter(storageAccount, storageContainer, storageOptions)
 };
 if (process.env.CLOUD_CODE_MAIN) {
     parseOptions.cloud = `${__dirname}/${process.env.CLOUD_CODE_MAIN}`;
